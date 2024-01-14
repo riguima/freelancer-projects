@@ -21,6 +21,6 @@ Rode com `flask run` e acesse `http://localhost:5000/`.
 Ou usando Docker:
 
 ```
-sudo docker build -t freelancer-projects
+sudo docker build -t freelancer-projects .
 sudo docker run --name freelancer-projects -p 5000:5000 -d freelancer-projects
 ```
