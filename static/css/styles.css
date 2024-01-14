@@ -1,0 +1,36 @@
+:root {
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  padding: 1rem 0;
+}
+
+.project {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 1rem;
+  width: 500px;
+}
