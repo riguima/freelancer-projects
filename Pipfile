@@ -8,8 +8,6 @@ flask = "*"
 httpx = "*"
 parsel = "*"
 toml = "*"
-deep-translator = "*"
-pytz = "*"
 
 [dev-packages]
 pytest = "*"
