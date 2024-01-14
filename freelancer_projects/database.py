@@ -3,6 +3,5 @@ from sqlalchemy.orm import sessionmaker
 
 from freelancer_projects.config import get_config
 
-
 db = create_engine(get_config()['DATABASE_URI'])
 Session = sessionmaker(db)

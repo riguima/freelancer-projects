@@ -1,11 +1,10 @@
 from flask import render_template
+from sqlalchemy import select
 
-from freelancer_projects.database import Session
-from freelancer_projects.models import Project
 from freelancer_projects.api import (get_nine_nine_freelas_projects,
                                      get_workana_projects)
-
-from sqlalchemy import select
+from freelancer_projects.database import Session
+from freelancer_projects.models import Project
 
 
 def init_app(app):
@@ -21,9 +20,18 @@ def init_app(app):
                 if project_model:
                     already_added_projects.append(project)
                 else:
-                    project_model = Project(title=project['title'], url=project['url'], project_datetime=project['datetime'])
+                    project_model = Project(
+                        title=project['title'],
+                        url=project['url'],
+                        project_datetime=project['datetime'],
+                    )
                     session.add(project_model)
                     session.commit()
             for project in already_added_projects:
                 projects.remove(project)
-            return render_template('index.html', projects=session.scalars(select(Project).order_by(Project.project_datetime.desc())))
+            return render_template(
+                'index.html',
+                projects=session.scalars(
+                    select(Project).order_by(Project.project_datetime.desc())
+                ),
+            )
