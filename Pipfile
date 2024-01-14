@@ -11,6 +11,10 @@ httpx = "*"
 parsel = "*"
 
 [dev-packages]
+pytest = "*"
+blue = "*"
+isort = "*"
+ruff = "*"
 
 [requires]
 python_version = "3.11"
