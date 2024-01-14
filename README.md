@@ -12,7 +12,7 @@ cd freelancer-projects
 pip install -r requirements.txt
 ```
 
-Você vai precisar exportar os cookies da página do Workana com seu login, para isso utilize a extensão __Export cookie JSON file for Puppeter__.
+Você vai precisar exportar os cookies da página do Workana com seu login, para isso utilize a extensão de navegador __Export cookie JSON file for Puppeter__.
 
 Depois de exportar para JSON, renomeie para __workana-cookies.json__ e mova para __freelancer-projects__.
 
