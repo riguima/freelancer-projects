@@ -2,6 +2,10 @@
   font-size: 20px;
 }
 
+body {
+  background: #000;
+}
+
 * {
   box-sizing: border-box;
   font-size: 1rem;
@@ -23,14 +27,23 @@ a {
 }
 
 .project {
+  background: #fff;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 7px;
   padding: 1rem;
   width: 500px;
+}
+
+.project a {
+  color: #000;
+}
+
+.project a:visited {
+  color: blueviolet;
 }
