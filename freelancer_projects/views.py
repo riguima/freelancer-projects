@@ -5,6 +5,7 @@ from freelancer_projects.api import (get_nine_nine_freelas_projects,
                                      get_workana_projects)
 from freelancer_projects.database import Session
 from freelancer_projects.models import Project
+from freelancer_projects.config import get_config
 
 
 def init_app(app):
@@ -29,6 +30,9 @@ def init_app(app):
                     session.commit()
             for project in already_added_projects:
                 projects.remove(project)
+            for project in session.scalars(select(Project).order_by(Project.project_datetime.desc())).all()[get_config()['MAX_PROJECTS']:]:
+                session.delete(project)
+                session.commit()
             return render_template(
                 'index.html',
                 projects=session.scalars(
