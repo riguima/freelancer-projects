@@ -11,10 +11,10 @@
 <body>
   <div class="projects">
     {% for project in projects %}
-      <div class="project">
-        <a href="{{ project.url }}" target="_blank">{{ project.title }}</a>
+      <a class="project" href="{{ project.url }}" target="_blank">
+        <span class="project__title">{{ project.title }}</span>
         <span>{{ project.project_datetime.strftime('%d/%m/%Y %H:%M') }}</span>
-      </div>
+      </a>
     {% endfor %}
   </div>
 </body>
