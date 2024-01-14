@@ -17,3 +17,10 @@ Você vai precisar exportar os cookies da página do Workana com seu login, para
 Depois de exportar para JSON, renomeie para __workana-cookies.json__ e mova para __freelancer-projects__.
 
 Rode com `flask run` e acesse `http://localhost:5000/`.
+
+Ou usando Docker:
+
+```
+sudo docker build -t freelancer-projects
+sudo docker run --name freelancer-projects -p 5000:5000 -d freelancer-projects
+```
