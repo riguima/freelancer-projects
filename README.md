@@ -14,8 +14,8 @@ pip install -r requirements.txt
 
 Renomeie o arquivo __.base.config.toml__ para __.config.toml__ e altere as configurações se necessário.
 
-- DATABASE_URI = URL do banco de dados, exemplo com postgres: `postgresql://username:password@localhost:5432/database`
-- MAX_PROJECTS = Número máximo de projetos que o banco de dados vai armazenar
+- `DATABASE_URI` = URL do banco de dados, exemplo com postgres: `postgresql://username:password@localhost:5432/database`
+- `MAX_PROJECTS` = Número máximo de projetos que o banco de dados vai armazenar
 
 Você vai precisar exportar os cookies da página do Workana com seu login, para isso utilize a extensão de navegador __Export cookie JSON file for Puppeter__.
 
