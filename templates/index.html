@@ -19,32 +19,24 @@
       </a>
     {% endfor %}
   </div>
-  <nav aria-label="...">
+  <nav>
     <ul class="pagination pagination-lg">
-      {% if page == 1 %}
-        <li class="page-item disabled">
-      {% else %}
-        <li class="page-item">
-      {% endif %}
-        <a class="page-link">Previous</a>
+      <li class="page-item">
+        <a class="page-link" href="/?page=1">First</a>
       </li>
-      {% for i in range(5) %}
-        {% if 0 <= page - (i - 2) <= last_page %}
-          {% if page - (i - 2) == page %}
+      {% for i in range(-2, 3) %}
+        {% if 1 <= page + i <= last_page %}
+          {% if page + i == page %}
             <li class="page-item active" aria-current="page">
-              <a class="page-link" href="/?page={{ page - (i - 2) }}">{{ page - (i - 2) }}</a>
+              <a class="page-link" href="/?page={{ page + i }}">{{ page + i }}</a>
             </li>
           {% else %}
-            <li class="page-item"><a class="page-link" href="/?page={{ page - (i - 2) }}">{{ page - (i - 2) }}</a></li>
+            <li class="page-item"><a class="page-link" href="/?page={{ page + i }}">{{ page + i }}</a></li>
           {% endif %}
         {% endif %}
       {% endfor %}
-      {% if page == last_page %}
-        <li class="page-item disabled">
-      {% else %}
-        <li class="page-item">
-      {% endif %}
-        <a class="page-link" href="#">Next</a>
+      <li class="page-item">
+        <a class="page-link" href="/?page={{ last_page }}">Last</a>
       </li>
     </ul>
   </nav>

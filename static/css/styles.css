@@ -50,6 +50,13 @@ a {
   font-weight: bold;
 }
 
+nav {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
 @media(max-width: 600px) {
   .projects {
     grid-template-columns: 1fr;
