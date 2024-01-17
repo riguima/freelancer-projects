@@ -1,6 +1,7 @@
 import json
 import re
 from datetime import datetime, timedelta
+from pathlib import Path
 
 from httpx import Client, Cookies
 from parsel import Selector
@@ -32,7 +33,7 @@ def get_nine_nine_freelas_projects():
 
 def get_workana_projects():
     cookies = Cookies()
-    for cookie in json.load(open('workana-cookies.json')):
+    for cookie in json.load(open(Path('workana-cookies.json').absolute())):
         cookies.set(cookie['name'], cookie['value'], cookie['domain'])
     with Client(cookies=cookies) as client:
         response = client.get('https://www.workana.com/jobs?language=pt')
