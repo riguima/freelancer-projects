@@ -11,6 +11,12 @@
   <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
+  {% if have_nine_nine_freelas_unread_messages %}
+    <div class="unread-messages-alert alert alert-primary" role="alert">Você tem mensagens não lidas no 99freelas, <a class="link-opacity-100" href="https://www.99freelas.com.br/messages/unread" target="_blank">Visualizar</a></div>
+  {% endif %}
+  {% if have_workana_unread_messages %}
+    <div class="unread-messages-alert alert alert-primary" role="alert">Você tem mensagens não lidas no Workana, <a class="link-opacity-100" href="https://www.workana.com/inbox" target="_blank">Visualizar</a></div>
+  {% endif %}
   <div class="projects">
     {% for project in projects %}
       <a class="project" href="{{ project.url }}" target="_blank">
@@ -22,7 +28,7 @@
   <nav>
     <ul class="pagination pagination-lg">
       <li class="page-item">
-        <a class="page-link" href="/?page=1">First</a>
+        <a class="page-link" href="/?page=1">Primeira</a>
       </li>
       {% for i in range(-2, 3) %}
         {% if 1 <= page + i <= last_page %}
@@ -36,7 +42,7 @@
         {% endif %}
       {% endfor %}
       <li class="page-item">
-        <a class="page-link" href="/?page={{ last_page }}">Last</a>
+        <a class="page-link" href="/?page={{ last_page }}">Última</a>
       </li>
     </ul>
   </nav>

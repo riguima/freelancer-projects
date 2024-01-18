@@ -4,6 +4,7 @@
 *.db
 .config.toml
 workana-cookies.json
+99freelas-cookies.json
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

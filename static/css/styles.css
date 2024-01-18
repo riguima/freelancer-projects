@@ -57,6 +57,10 @@ nav {
   align-items: center;
 }
 
+.unread-messages-alert {
+  text-align: center;
+}
+
 @media(max-width: 600px) {
   .projects {
     grid-template-columns: 1fr;

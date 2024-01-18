@@ -5,17 +5,19 @@ from flask import Flask
 from sqlalchemy import select
 
 from freelancer_projects import views
-from freelancer_projects.api import (get_nine_nine_freelas_projects,
-                                     get_workana_projects)
+from freelancer_projects.api import NineNineFreelas, Workana
 from freelancer_projects.config import get_config
 from freelancer_projects.database import Session
 from freelancer_projects.models import Project
 
+nine_nine_freelas = NineNineFreelas()
+workana = Workana()
+
 
 def add_projects():
     while True:
-        projects = get_nine_nine_freelas_projects()
-        projects.extend(get_workana_projects())
+        projects = nine_nine_freelas.get_projects()
+        projects.extend(workana.get_projects())
         with Session() as session:
             for project in projects:
                 query = select(Project).where(Project.url == project['url'])
@@ -39,7 +41,7 @@ def add_projects():
 def create_app():
     app = Flask(__name__, template_folder='templates', static_folder='static')
     Thread(target=add_projects).start()
-    views.init_app(app)
+    views.init_app(app, nine_nine_freelas, workana)
     return app
 
 

@@ -21,6 +21,8 @@ Você vai precisar exportar os cookies da página do Workana com seu login, para
 
 Depois de exportar para JSON, renomeie para __workana-cookies.json__ e mova para __freelancer-projects__.
 
+Exporte e renomeie os cookies do 99freelas também para __99freelas-cookies.json__.
+
 Rode com `flask run` e acesse `http://localhost:5000/`.
 
 Ou usando Docker:
