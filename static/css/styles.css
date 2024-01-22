@@ -38,7 +38,7 @@ a {
   border: 1px solid #000;
   border-radius: 7px;
   padding: 1rem;
-  height: 200px;
+  height: 250px;
   box-shadow: 1px 1px 10px black;
 }
 
@@ -46,7 +46,8 @@ a {
   color: blueviolet;
 }
 
-.project__title {
+.project__website, .project__title {
+  font-size: 1.3rem;
   font-weight: bold;
 }
 

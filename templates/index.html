@@ -20,13 +20,18 @@
   <div class="projects">
     {% for project in projects %}
       <a class="project" href="{{ project.url }}" target="_blank">
-        <span class="project__title">{{ project.title }}</span>
+        {% if 'workana' in project.url %}
+          <h1 class="project__website text-primary">Workana</h1>
+        {% elif '99freelas' in project.url %}
+          <h1 class="project__website text-primary">99freelas</h1>
+        {% endif %}
+        <h1 class="project__title">{{ project.title }}</h1>
         <span>{{ project.project_datetime.strftime('%d/%m/%Y %H:%M') }}</span>
       </a>
     {% endfor %}
   </div>
   <nav>
-    <ul class="pagination pagination-lg">
+    <ul class="pagination pagination-sm">
       <li class="page-item">
         <a class="page-link" href="/?page=1">Primeira</a>
       </li>

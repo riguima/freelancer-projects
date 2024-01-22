@@ -70,7 +70,9 @@ class Workana(Website):
         super().__init__('workana-cookies.json')
 
     def have_unread_messages(self):
-        return False
+        with Client(cookies=self.cookies) as client:
+            response = client.get('https://www.workana.com/jobs?language=pt')
+            return not 'emptyMessages' in response.text
 
     def get_projects(self):
         with Client(cookies=self.cookies) as client:
